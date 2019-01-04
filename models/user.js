@@ -1,5 +1,5 @@
-import * as Model from '../utils/provider'
+import { Provider } from '../utils/provider'
 
-const User = new Model({tableName: 'users'})
+const User = Provider.extend({tableName: 'users'})
 
 export default User

@@ -1,5 +1,5 @@
-import * as Model from '../utils/provider'
+import { Provider } from '../utils/provider'
 
-const Checkin = new Model({tableName: 'checkins'})
+const Checkin = new Provider({tableName: 'checkins'})
 
 export default Checkin

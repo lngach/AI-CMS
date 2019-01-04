@@ -32,4 +32,4 @@ app.use((err, req, res, next) => {
   res.send({error: err.message + ' ' + err.status || 500})
 })
 
-export default app
+module.exports = app
