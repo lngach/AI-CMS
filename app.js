@@ -5,6 +5,7 @@ import logger from 'morgan'
 
 import indexRouter from './routes/index'
 import usersRouter from './routes/users'
+import checkinsRouter from './routes/checkins'
 
 var app = express()
 
@@ -15,6 +16,7 @@ app.use(cookieParser())
 
 app.use('/', indexRouter)
 app.use('/users', usersRouter)
+app.use('/checkins', checkinsRouter)
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
