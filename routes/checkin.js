@@ -1,9 +1,10 @@
 import { Router } from 'express'
+import { Checkin } from '../models/checkin'
 const router = Router()
 
-/* GET home page. */
+/* GET checkins listing. */
 router.get('/', (req, res, next) => {
-  res.send({message: 'index'})
+  res.send({message: 'checkin'})
 })
 
 export default router
