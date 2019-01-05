@@ -48,7 +48,7 @@ router.post('/signout', (req, res, next) => {
                 error.status = 400
                 next(error)
             } else {
-                User.findById(payload.id).then(user => {
+                User.findOne({where: {tokens: tokens}}).then(user => {
                     if (user) {
                         user.tokens = null
                         user.save().then(() => {
