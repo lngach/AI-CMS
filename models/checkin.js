@@ -25,7 +25,7 @@ const Checkin = sequelize.define('checkins',
             field: 'checkin_at'
         },
         location: Sequelize.STRING,
-        wifi: Sequelize.STRING,
+        WIFI: Sequelize.STRING,
         GPS: {
             type: Sequelize.STRING,
             field: 'gps'

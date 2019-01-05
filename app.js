@@ -8,7 +8,7 @@ import usersRouter from './routes/users'
 import checkinsRouter from './routes/checkins'
 import authRouter from './routes/auth'
 import isAuthorized from './utils/isAuthorized'
-
+import profileRouter from './routes/profile'
 var app = express()
 
 app.use(logger('dev'))
@@ -21,6 +21,7 @@ app.use('/auth', authRouter)
 app.use(isAuthorized)
 app.use('/users', usersRouter)
 app.use('/checkins', checkinsRouter)
+app.use('/profile', profileRouter)
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

@@ -13,8 +13,9 @@ const isAuthorized = (req, res, next) => {
                 error.status = 400
                 next(error)
             } else {
-                User.findOne({where: {tokens: tokens}}).then(user => {
+                User.findOne({where: {tokens: tokens}, attributes: ['id', 'name', 'avatar', 'username', 'email', 'sign_in_count', 'created_at', 'updated_at']}).then(user => {
                     if (user) {
+                        req.currentUser = user
                         next()
                     } else {
                         let error = new Error('Unauthorized')
