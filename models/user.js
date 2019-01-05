@@ -1,6 +1,6 @@
 import { sequelize } from '../utils/provider'
 import Sequelize from 'sequelize'
-import Checkin from './checkin';
+import Checkin from './checkin'
 
 const User = sequelize.define('users', {
         id: {

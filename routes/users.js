@@ -1,6 +1,6 @@
 import { Router } from 'express'
 import User from '../models/user'
-import Checkin from '../models/checkin';
+import Checkin from '../models/checkin'
 const router = Router()
 
 /* GET users listing. */
