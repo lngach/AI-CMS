@@ -7,6 +7,7 @@ import indexRouter from './routes/index'
 import usersRouter from './routes/users'
 import checkinsRouter from './routes/checkins'
 import authRouter from './routes/auth'
+import isAuthorized from './utils/isAuthorized'
 
 var app = express()
 
@@ -16,9 +17,10 @@ app.use(urlencoded({ extended: false }))
 app.use(cookieParser())
 
 app.use('/', indexRouter)
+app.use('/auth', authRouter)
+app.use(isAuthorized)
 app.use('/users', usersRouter)
 app.use('/checkins', checkinsRouter)
-app.use('/auth', authRouter)
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
@@ -31,9 +33,9 @@ app.use((err, req, res, next) => {
   res.locals.message = err.message
   res.locals.error = req.app.get('env') === 'development' ? err : {}
 
-  // render the error page
-  res.status(err.status || 500)
-  res.send({error: err.message + ' ' + err.status || 500})
+  // render the error message
+    res.status(err.status || 500)
+    res.send({error: err.message + ' ' + err.status || 500})
 })
 
 module.exports = app
