@@ -24,7 +24,7 @@ const User = sequelize.define('users', {
             type: Sequelize.STRING,
             allowNull: false
         },
-        tokens: Sequelize.STRING,
+        tokens: Sequelize.TEXT,
         resetPasswordToken: {
             type: Sequelize.STRING,
             field: 'reset_password_token'
